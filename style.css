@@ -1,0 +1,322 @@
+:root{
+    --postybd: #00cba9;
+    --postyhd: #200d99;
+    --indexbd: #926c4d;
+    --indexhd: #526935;
+    --kontakthd: #6775cb;
+    --kontaktbd: #e3e3e3;
+    --tabelkibd: #1f1008;
+    --tabelkihd: #cd5f28;
+    --loginbd: #22e118;
+    --loginhd: #071602;
+    --szary: #c5c5c5;
+    --prawieczarny: #1c1c1c;
+    --bebd: #5E2750;
+    --behd: #2C001E;
+}
+::-webkit-scrollbar {
+    width: 20px;  
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--szary);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #a0a0a0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', system-ui;
+    overflow-x: hidden !important;
+    overflow: overlay;
+}
+li{
+    list-style: none;
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+    user-select: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+article{
+    max-width: 1200px;
+    margin: 5rem 10px 10px 10px;
+    background: var(--szary);
+    width: 100%;
+    border: 10px black inset;
+    box-sizing: border-box;
+}
+article h1{
+    color: var(--prawieczarny);
+    font-size: 2rem;
+    text-align: center;
+    padding: 3rem;
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+article p, .modal h2{
+    display: block;
+    color: var(--prawieczarny);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 3.5rem 1rem 3.5rem;
+    line-height: 2rem;
+}
+article p span{
+    font-size: 2rem;
+}
+article table{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+td{
+    padding: 5px;
+    margin: 5px;
+}
+tr:nth-child(odd) {background: #969696}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input,form textarea, form a{
+    width: 60%;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: larger;
+    border: 5px #a3a3a3 inset;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+form textarea{
+    height: 200px;
+}
+form a{
+    text-decoration: none;
+    color: var(--prawieczarny);
+    text-align: center;
+}
+form a:hover{
+    scale: 1;
+}
+form input[type=file]{
+    display: none;
+}
+form label img{
+    max-width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+svg{
+    position:absolute;
+    top: 60px; 
+    width: 100%;
+    z-index: -1;
+}
+td button{
+    font-family: inherit;
+    border: 2px inset var(--prawieczarny);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+td button:hover{
+    background-color: var(--szary);
+}
+.specyfikacja{
+    color: red;
+    animation-name: animacja;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes animacja {
+    0% {color: red;}
+    33% {color: green;}
+    66% {color: blue;}
+  }
+.navbar a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    filter: invert(100%);
+}
+
+.links a, .navbar .login, .hamburger, .logo a{
+    color: currentColor;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    padding-left: 0;
+}
+
+.navbar .hamburger{
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.navbar li:hover,a:hover,.logo:hover{
+    scale: 1.15;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    top: 60px;
+    height: 0;
+    width: 100%;
+    background: var(--szary);
+    overflow: hidden;
+    filter: invert(100%);
+    box-sizing: border-box;
+}
+.dropdown>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+.dropdown a{
+    box-sizing: border-box;
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+}
+.dropdown.opened{
+    height: 180px;
+}
+.modal{
+    display: none;
+    position: fixed;
+    top: 30vh;
+    height: 320px;
+    max-width: 400px;
+    z-index: 1;
+    border: 0px;
+    background: var(--szary);
+    border: 10px var(--prawieczarny) inset;
+}
+.modal #anuluj{
+    position: relative;
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+    font-family: inherit;
+    font-size: 2rem;
+    border: none;
+    background-color: inherit;
+    color: #494949;
+    padding: 0;
+}
+.modal #anuluj:hover{
+    color: #000000;
+}
+@media only screen and (max-width: 900px) {
+    .navbar .links, .navbar .login{
+        display: none;
+    }
+    .navbar .hamburger{
+        display: block;
+    }
+    .dropdown{
+        display: block;
+    }
+    ::-webkit-scrollbar{
+        width: 0;
+    }
+}
+@media only screen and (max-width: 666px) {
+    article p{
+        font-size: 1rem;
+    }
+    article h1{
+        font-size: 1.5rem;
+    }
+    td{
+        max-width: 9rem;
+        font-size: 0.7rem;
+        line-height: 1rem;
+    }
+    form input, form textarea{
+        font-size: 0.65rem;
+    }
+    form input,form textarea, form a{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    article h1{
+        font-size: 1.2rem;
+    }
+    .modal input{
+        font-size: 0.8rem;
+    }
+}
+.postyhd{
+    background: var(--postybd);
+}
+.postybd{
+    background-color: var(--postyhd);
+}
+.indexbd{
+    background: var(--indexbd)
+}
+.indexhd{
+    background: var(--indexhd)
+}
+.kontakthd{
+    background-color: var(--kontakthd);
+}
+.kontaktbd{
+    background-color: var(--kontaktbd);
+}
+.tabelkihd{
+    background-color: var(--tabelkihd);
+}
+.tabelkibd{
+    background-color: var(--tabelkibd);
+}
+.loginhd{
+    background-color: var(--loginhd);
+}
+.loginbd{
+    background-color: var(--loginbd);
+}
+.bebd{
+    background-color: var(--bebd);
+}
+.behd{
+    background-color: var(--behd);
+}
